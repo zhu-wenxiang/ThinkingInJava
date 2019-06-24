@@ -1,5 +1,7 @@
 package polymorphism;
 
+import java.util.*;
+
 class Instrument3{
 	void play(Note n) {System.out.println("Instrument play: "+n);}
 	String what() {return "Instrument3";}
@@ -37,6 +39,19 @@ public class Music3 {
 			instrument3.play(Note.B_FLAT);
 		}
 	}
+	public static Instrument3 next() {
+		Random random=new Random();
+		switch (random.nextInt(3)) {
+		default:
+		case 1:
+			return new Wind3();
+		case 2:
+			return new Percussion();
+		case 0:
+			return new Brass();
+		}
+	}
+	
 	public static void main(String[] args) {
 		Instrument3[] orchestra= {
 				new Wind3(),
@@ -45,5 +60,10 @@ public class Music3 {
 		};
 
 		tuneAll(orchestra);
+		//this is the test of Exercise 8
+		System.out.println("Test Exercise 8");
+		for (int i = 0; i <10; i++) {
+			System.out.println(next());
+		}
 	}
 }
