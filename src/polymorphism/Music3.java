@@ -65,5 +65,11 @@ public class Music3 {
 		for (int i = 0; i <10; i++) {
 			System.out.println(next());
 		}
+		//this is the simple version of Exercise 9
+		System.out.println("这是练习9的简化版本");
+		for (Instrument3 instrument3 : orchestra) {
+			//forget the object type but produce the right behavior
+			instrument3.adjust();
+		}
 	}
 }
