@@ -1,10 +1,10 @@
 package interfaces;
 
-import javax.swing.text.PlainDocument;
+import static util.Print.*;
 
 public class Apply {
 	public static void process(Processor p,Object input) {
-		System.out.println("Using Processor:"+p.name());
-		System.out.println(p.process(input));
+		print("Using Processor"+ p.name());
+		print(p.process(input));
 	}
 }
